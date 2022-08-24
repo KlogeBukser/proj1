@@ -10,6 +10,8 @@
 #include <iomanip>
 #include <fstream>
 
+#define SAMPLE_COUNT 100
+
 double u(double x);
 
 int main(int argc, const char * argv[]) {
@@ -18,9 +20,9 @@ int main(int argc, const char * argv[]) {
     double result[100] = {0};
     
     for (int i=0;i<100;i++) {
-        double x = double(i)/100;
+        double x = double(i)/SAMPLE_COUNT;
         result[i] = u(x);
-        std::cout << std::setiosflags(std::ios::scientific) << double(i)/100 << "," << result[i] << std::endl;
+        std::cout << std::setiosflags(std::ios::scientific) << double(i)/SAMPLE_COUNT << "," << result[i] << std::endl;
 
     }
     
