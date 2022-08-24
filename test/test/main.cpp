@@ -7,7 +7,8 @@
 
 #include <iostream>
 #include <cmath>
-
+#include <iomanip>
+#include <fstream>
 
 double u(double x);
 
@@ -19,7 +20,8 @@ int main(int argc, const char * argv[]) {
     for (int i=0;i<100;i++) {
         double x = double(i)/100;
         result[i] = u(x);
-        std::cout << result[i];
+        std::cout << std::setiosflags(std::ios::scientific) << double(i)/100 << "," << result[i] << std::endl;
+
     }
     
     return 0;
