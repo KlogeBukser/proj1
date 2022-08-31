@@ -1,4 +1,4 @@
-#include "triDiagonlSolver.h"
+#include "triDiagonalSolver.h"
 #include <iostream>
 
 
