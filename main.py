@@ -6,6 +6,7 @@ import pandas as pd
 #TODO: read from file and generate (?kind) plot
 
 os.system("g++ -o main.out main.cpp -std=c++17")
+
 os.system("./main.out")
 
 def read_plot(filenames,title):

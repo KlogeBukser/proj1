@@ -14,8 +14,6 @@
 #define SAMPLE_COUNT 100
 using namespace std;
 
-double u(double x);
-
 int main(int argc, char * argv[]) {
     std::cout << "Hello, World!\n";
     /*
@@ -84,12 +82,5 @@ int main(int argc, char * argv[]) {
     writeFile("general.txt",genVectors, 2);
 
 
-
-
-
     return 0;
-}
-
-double u(double x) {
-    return 1 - (1 - exp(-10*x))*x - exp(-10*x);
 }
