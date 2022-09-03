@@ -1,10 +1,3 @@
-//
-//  main.cpp
-//  test
-//
-//  Created by Bukser Kloge on 24/8/22.
-//
-
 #include <iostream>
 #include <cmath>
 #include <iomanip>

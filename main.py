@@ -5,7 +5,7 @@ import pandas as pd
 
 #TODO: read from file and generate (?kind) plot
 
-os.system("g++ -o main.out main.cpp -larmadillo -std=c++17")
+os.system("g++ -o main.out main.cpp -std=c++17")
 os.system("./main.out")
 
 def read_plot(filenames,title):
@@ -19,7 +19,6 @@ def read_plot(filenames,title):
 		y = datas[i][1]
 		plt.plot(x,y,label = labels[i])
 
-
 	plt.legend()
 	plt.xlabel("x")
 	plt.ylabel("y")
@@ -27,4 +26,4 @@ def read_plot(filenames,title):
 	plt.show()
 
 
-read_plot("exact general","title")
+read_plot("exact general","Solutions to Poisson's equation")
