@@ -83,7 +83,7 @@ int main(int argc, char * argv[]) {
       g[i] = 100*h*h*exp(-10*x[i + 1]); //extra index on x since we're ignoring the first index for this algo
     }
     b[n-1] = 2;
-    g[n-1] = 100*h*h*exp(-10);
+    g[n-1] = 100*h*h*exp(-10*x[n]);
     vector<double> genSol = general(a,b,c,g);
     vector<double> genVectors[2];
     genVectors[0] = x;
