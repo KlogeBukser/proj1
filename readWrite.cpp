@@ -28,7 +28,9 @@ void writeFile(string filename, vector<double> vectors[], int nVectors){
       else{
         outFile << vec[i];
       }
-      outFile << " ";
+      if (j < nVectors - 1){
+        outFile << ",";
+      }
     }
     outFile << "\n";
   }

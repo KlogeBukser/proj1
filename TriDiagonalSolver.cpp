@@ -13,7 +13,6 @@ vector<double> general(vector<double> a, vector<double> b, vector<double> c, vec
     p = 1/(b[i] - a[i]*c[i-1]);
     c[i] = p*c[i];
     g[i] = p*(g[i]-a[i]*g[i-1]);
-    cout << "p = " << p << "\n";
   }
   v[n] = g[n-1]/(b[n-1] - a[n-1]*c[n-2]);
   for (int i = n-2; i > -1; i--){

@@ -1,22 +1,30 @@
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 import numpy as np
 import os
 import pandas as pd
 
 #TODO: read from file and generate (?kind) plot
 
-# os.system("g++ -o main.out main.cpp -larmadillo -std=c++17")
+os.system("g++ -o main.out main.cpp -larmadillo -std=c++17")
+os.system("./main.out")
 
-def read_and_plot(filename):
-	data = pd.read_csv(filename,header=None)
+def read_plot(filenames,title):
+	plt.title(title)
+	names = filenames.split(" ")
+	labels = [name for name in names]
+	datas = []
+	for i in range(len(names)):
+		datas.append(pd.read_csv(names[i] + ".txt", header = None))
+		x = datas[i][0]
+		y = datas[i][1]
+		plt.plot(x,y,label = labels[i])
 
-	# print(data.iloc[0])
-	plt.plot(data.iloc[0],data.iloc[1])
+
+	plt.legend()
 	plt.xlabel("x")
 	plt.ylabel("y")
 
 	plt.show()
 
 
-filename = "output.txt"
-read_and_plot(filename)
+read_plot("exact general","title")
