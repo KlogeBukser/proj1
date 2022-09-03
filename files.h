@@ -1,1 +1,6 @@
-void writeFile(string, vector<double>[], int, int);
+#ifndef FILES
+#define FILES
+
+void writeFile(std::string, std::vector<double>[], int);
+
+#endif
