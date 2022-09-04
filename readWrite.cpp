@@ -2,9 +2,29 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-using namespace std;
+
+void writeFile(string filename, int n, double (*u)(double)){
+  /*Takes filename, number of steps,
+  and a function to write two vectors to file without using vector elements*/
+  double result[n] = {0};
+  double x = 0;
+  double h = double(1)/(n - 1);
+  std::ofstream output;
+  output.open(filename, std::ios::out);
+  if(!output)
+      {
+          std::cerr<<"Cannot open the output file."<<std::endl;
+          return;
+      }
+  for (int i = 0; i < n; i++) {
+      output << std::setiosflags(std::ios::scientific) << x << "," << u(x) << std::endl;
+      x += h;
+  }
+  output.close();
+}
 
 void writeFile(string filename, vector<double> vectors[], int nVectors){
+  /*This version takes any number of vectors and write them all to file*/
   ofstream outFile;
   outFile.open(filename);
   vector<double> vec;
@@ -21,7 +41,7 @@ void writeFile(string filename, vector<double> vectors[], int nVectors){
         outFile << ",";
       }
     }
-    outFile << "\n";
+    outFile << std::endl;
   }
   outFile.close();
 }

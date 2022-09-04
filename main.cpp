@@ -4,20 +4,19 @@
 #include <fstream>
 #include <vector>
 #include <string>
-//#include "files.h"
-//#include "functions.h"
 #include "exactSolution.cpp"
 #include "readWrite.cpp"
 #include "TriDiagonalSolver.cpp"
 
 
-#define SAMPLE_COUNT 100
 using namespace std;
 double u(double);
 
 int main(int argc, char * argv[]) {
     std::cout << "Hello, World!\n";
 
+
+    /*
     double result[100] = {0};
 
     std::ofstream output;
@@ -35,7 +34,7 @@ int main(int argc, char * argv[]) {
         output << std::setiosflags(std::ios::scientific) << double(i)/SAMPLE_COUNT << "," << result[i] << std::endl; // need fixing
     }
     output.close();
-
+    */
 
 
     /*The following section makes an array x, and finds the exact solution*/
@@ -50,19 +49,15 @@ int main(int argc, char * argv[]) {
       cout << "Input must be at least 4, try again: ";
       cin >> m;
     }
+
+    writeFile("textfiles/exact.txt", m, &u);
+
     vector<double> x(m);
     x[0] = 0; x[m-1] = 1;
     double h = double(1)/(m-1);
     for (int i = 1; i < m-1; i++){
       x[i] = x[i-1] + h;
     }
-    /*
-    vector<double> vectors[2];
-    vectors[0] = x;
-    vectors[1] = exactSolution(x);
-    writeFile("exact.txt",vectors, 2);
-    */
-
 
     /*computes general solution*/
     int n = m - 2;
@@ -81,7 +76,6 @@ int main(int argc, char * argv[]) {
     genVectors[0] = x;
     genVectors[1] = genSol;
     writeFile("textfiles/general.txt",genVectors, 2);
-
 
 
     return 0;
