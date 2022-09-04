@@ -12,6 +12,9 @@
 
 
 #define SAMPLE_COUNT 100
+
+#define ERR_CANNOT_OPEN_FILE 1;
+
 using namespace std;
 double u(double);
 
@@ -25,7 +28,7 @@ int main(int argc, char * argv[]) {
     if(!output)
         {
             std::cerr<<"Cannot open the output file."<<std::endl;
-            return 1;
+            return ERR_CANNOT_OPEN_FILE;
         }
     for (int i=0;i<100;i++) {
         double x = double(i)/SAMPLE_COUNT;
