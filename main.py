@@ -15,7 +15,7 @@ def read_plot(filenames,title):
 	labels = [name for name in names]
 	datas = []
 	for i in range(len(names)):
-		datas.append(pd.read_csv(names[i] + ".txt", header = None))
+		datas.append(pd.read_csv("textfiles/" + names[i] + ".txt", header = None))
 		x = datas[i][0]
 		y = datas[i][1]
 		plt.plot(x,y,label = labels[i])
