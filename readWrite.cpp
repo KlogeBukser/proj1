@@ -1,20 +1,22 @@
-//#include "files.h"
 #include <iostream>
 #include <fstream>
 #include <vector>
 
-void writeFile(string filename, int n, double (*u)(double)){
+double u(double y) {
+    return 1 - (1 - exp(-10))*y - exp(-10*y);
+}
+
+void writeExact(int n){
   /*Takes filename, number of steps,
   and a function to write two vectors to file without using vector elements*/
   double result[n] = {0};
   double x = 0;
   double h = double(1)/(n - 1);
   std::ofstream output;
-  output.open(filename, std::ios::out);
+  output.open("textfiles/exact.txt", std::ios::out);
   if(!output)
       {
           std::cerr<<"Cannot open the output file."<<std::endl;
-          return;
       }
   for (int i = 0; i < n; i++) {
       output << std::setiosflags(std::ios::scientific) << x << "," << u(x) << std::endl;

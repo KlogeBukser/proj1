@@ -1,16 +1,8 @@
-//
-//  generalAlgo.cpp
-//  Comp proj1
-//
-//  Created by Bukser Kloge on 4/9/22.
-//
 
 #include <vector>
 #include <cmath>
-#include "generalAlgo.hpp"
-#include "fileHandling.hpp"
-#include "TriDiagonalSolver.h"
-
+#include "TriDiagonalSolver.cpp"
+#include "readWrite.cpp"
 
 using namespace std;
 
@@ -21,7 +13,7 @@ void generalAlgorithm(int m) {
     for (int i = 1; i < m-1; i++){
       x[i] = x[i-1] + h;
     }
-    
+
     int n = m - 2;
     vector<double> a(n-1);
     vector<double> b(n);
@@ -34,14 +26,14 @@ void generalAlgorithm(int m) {
     b[n-1] = 2;
     g[n-1] = 100*h*h*exp(-10*x[n]);
     vector<double> genSol = general(a,b,c,g);
-    
+
     vector<double> genVectors[2];
-    
+
     genVectors[0] = x;
     genVectors[1] = genSol;
-    
-    
+
+
     string filename("textfiles/general.txt");
     writeFile(filename, genVectors, 2);
-    
+
 }
