@@ -9,7 +9,7 @@ double u(double y) {
 void writeExact(int n){
   /*Takes filename, number of steps,
   and a function to write two vectors to file without using vector elements*/
-  double result[n] = {0};
+  double result[n];
   double x = 0;
   double h = double(1)/(n - 1);
   std::ofstream output;
