@@ -10,6 +10,9 @@
 
 #include <stdio.h>
 #include <vector>
+
+using namespace std;
+
 vector<double> logAbsError(vector<double> u, vector<double> v, int step);
 
 #endif /* calError_hpp */
