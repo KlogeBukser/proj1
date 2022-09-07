@@ -6,6 +6,7 @@
 #include <string>
 
 #include "generalAlgo.cpp"
+#include "calError.hpp"
 using namespace std;
 
 int main(int argc, char * argv[]) {
