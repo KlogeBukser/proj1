@@ -9,5 +9,7 @@
 #define calError_hpp
 
 #include <stdio.h>
+#include <vector>
+vector<double> logAbsError(vector<double> u, vector<double> v, int step);
 
 #endif /* calError_hpp */

@@ -9,6 +9,8 @@
 #include "calError.hpp"
 using namespace std;
 
+//TODO: save u and v in main to pass int error calculations;
+
 int main(int argc, char * argv[]) {
     std::cout << "Hello, World!\n";
 
@@ -25,8 +27,11 @@ int main(int argc, char * argv[]) {
       cin >> m;
     }
 
-    writeExact(m);
-    generalAlgorithm(m);
+    writeExact(m); // u
+    generalAlgorithm(m); // v
+    
+    vector<double> errors = logAbsError(m);
+    
 
     return 0;
 }
