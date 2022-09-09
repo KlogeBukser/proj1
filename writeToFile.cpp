@@ -6,6 +6,9 @@ using namespace std;
 
 
 double u(double y) {
+    if (y > 1 - 1e-12){
+      return 0;
+    }
     return 1 - (1 - exp(-10))*y - exp(-10*y);
 }
 
