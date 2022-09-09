@@ -19,7 +19,7 @@ vector<double> writeExact(int n){
     double h = double(1)/(n - 1);
     vector<double> exa_sol(n);
     std::ofstream output;
-    output.open("exact.txt", std::ios::out);
+    output.open("exact" + to_string(n-1) + ".txt", std::ios::out);
 //    output.open("textfiles/exact.txt", std::ios::out);
     if(!output)
       {
