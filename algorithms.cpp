@@ -82,13 +82,13 @@ void writeCalError(vector<double> u, vector<double> v, int step, int is_abs) {
     
     string filename;
     if (is_abs) {
-        for (int i=1;i<step;i++) { // starting from i=1 to avoid boundary points as error is 0 at those points.
+        for (int i=1;i<step-1;i++) { // starting from i=1 to avoid boundary points as error is 0 at those points.
             error[i] = log10(abs(u[i]-v[i]));
             filename = "abs_error.txt";
         }
     }
     else {
-        for (int i=1;i<step;i++) { // starting from i=1 to avoid boundary points as error is 0 at those points.
+        for (int i=1;i<step-1;i++) { // starting from i=1 to avoid boundary points as error is 0 at those points.
             error[i] = log10(abs(u[i]-v[i])/u[i]);
             filename = "rel_error.txt";
         }
