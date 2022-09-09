@@ -69,14 +69,12 @@ void writeCalError(vector<double> u, vector<double> v, int step, int is_abs) {
     
     /* calculates the absolute or relative error */
     
-    vector<double> error(step);
-    error[0] = 0.0;
-    error[step-1] = 0.0;
+    vector<double> error(step-2);
     
     
-    vector<double> x(step);
-    x[0] = 0; x[step-1] = 1;
+    vector<double> x(step-2);
     double h = double(1)/(step-1);
+    x[0] = h; x[step-1] = 1-h;
     for (int i = 1; i < step-1; i++){
       x[i] = x[i-1] + h;
     }
