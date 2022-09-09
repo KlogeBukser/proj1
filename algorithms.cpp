@@ -62,3 +62,42 @@ void specialAlgorithm(int m){
   string filename("special.txt");
   writeFile(filename, genVectors, 2);
 }
+
+void writeCalError(vector<double> u, vector<double> v, int step, int is_abs) {
+    
+    /* calculates the absolute or relative error */
+    
+    vector<double> error(step);
+    error[0] = 0.0;
+    error[step-1] = 0.0;
+    
+    
+    vector<double> x(step);
+    x[0] = 0; x[step-1] = 1;
+    double h = double(1)/(step-1);
+    for (int i = 1; i < step-1; i++){
+      x[i] = x[i-1] + h;
+    }
+    
+    
+    string filename;
+    if (is_abs) {
+        for (int i=1;i<step;i++) { // starting from i=1 to avoid boundary points as error is 0 at those points.
+            error[i] = log10(abs(u[i]-v[i]));
+            filename = "abs_error.txt";
+        }
+    }
+    else {
+        for (int i=1;i<step;i++) { // starting from i=1 to avoid boundary points as error is 0 at those points.
+            error[i] = log10(abs(u[i]-v[i])/u[i]);
+            filename = "rel_error.txt";
+        }
+    }
+    
+    vector<double> error_vectors[2];
+
+    error_vectors[0] = x;
+    error_vectors[1] = error;
+    writeFile(filename, error_vectors, 2);
+}
+
