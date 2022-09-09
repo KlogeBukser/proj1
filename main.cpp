@@ -31,9 +31,11 @@ int main(int argc, char * argv[]) {
     vector<double> gen_sol = generalAlgorithm(m); // v with general algo
     specialAlgorithm(m); // v with special algo
 
-    vector<double> errors = logAbsError(exa_sol, gen_sol,m);
-    writeFile("error.txt", &errors, 1);
-    
+    vector<double> abs_errors = logError(exa_sol, gen_sol,m, 1);
+    writeFile("abs_error.txt", &abs_errors, 1);
+
+    vector<double> rel_errors = logError(exa_sol, gen_sol,m, 0);
+    writeFile("rel_error.txt", &rel_errors, 1);
     
     return 0;
 }
