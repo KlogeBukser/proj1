@@ -1,4 +1,4 @@
-
+#include <time.h>
 #include <vector>
 #include <cmath>
 #include <string>
@@ -26,7 +26,11 @@ vector<double> generalAlgorithm(int m) {
       g[i] = 100*h*h*exp(-10*x[i + 1]); //extra index on x since we're ignoring the first index for this algo
     }
 
+    clock_t t1 = clock();
     vector<double> genSol = general(a,b,c,g);
+    clock_t t2 = clock();
+    double duration_seconds = ((double) (t2 - t1)) / CLOCKS_PER_SEC;
+    cout << "General algo: n = " << m - 1 << ", t = " << duration_seconds << endl;
 
     vector<double> genVectors[2];
 
@@ -54,7 +58,12 @@ void specialAlgorithm(int m){
     g[i] = 100*h*h*exp(-10*x[i + 1]); //extra index on x since we're ignoring the first index for this algo
   }
   g[n-1] = 100*h*h*exp(-10*x[n]);
+
+  clock_t t3 = clock();
   vector<double> genSol = special(g);
+  clock_t t4 = clock();
+  double duration_seconds = ((double) (t4 - t3)) / CLOCKS_PER_SEC;
+  cout << "Special algo: n = " << m - 1 << ", t = " << duration_seconds << endl;
 
   vector<double> genVectors[2];
 
