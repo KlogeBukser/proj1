@@ -48,10 +48,9 @@ void specialAlgorithm(int m){
 
   int n = m - 2;
   vector<double> g(n);
-  for (int i = 0; i < n-1; i++){
+  for (int i = 0; i < n; i++){
     g[i] = 100*h*h*exp(-10*x[i + 1]); //extra index on x since we're ignoring the first index for this algo
   }
-  g[n-1] = 100*h*h*exp(-10*x[n]);
   vector<double> genSol = special(g);
 
   vector<double> genVectors[2];

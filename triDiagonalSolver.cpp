@@ -24,14 +24,17 @@ vector<double> general(vector<double> a, vector<double> b, vector<double> c, vec
 vector<double> special(vector<double> g){
   int n = int(g.size());
   vector<double> v(n+2);
+  vector<double> q(n);
   v[0] = 0; v[n+1] = 0;         //boundaries of v, not used in algo
-  g[0] /= 2;
+  g[0] *= 0.5;
+  q[0] = 0.5;
   for (int i = 1; i < n; i++){
-    g[i] = (i + 1)*(g[i] + g[i-1])/double(i+2);
+    q[i] = double(i + 1)/(i + 2);
+    g[i] = q[i]*(g[i] + g[i-1]);
   }
-  v[n] = n*(g[n-1]/double(n + 1));
+  v[n] = q[n-1]*g[n-1];
   for (int i = n-1; i > 0; i--){
-    v[i] = i*(v[i+1]/double(i+1)) + g[i-1];
+    v[i] = q[i-1]*v[i+1] + g[i-1];
   }
   return v;
 }
