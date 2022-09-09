@@ -1,7 +1,7 @@
 
 #include <vector>
 #include <cmath>
-#include "TriDiagonalSolver.cpp"
+#include "triDiagonalSolver.cpp"
 #include "writeToFile.cpp"
 
 using namespace std;
@@ -15,16 +15,15 @@ vector<double> generalAlgorithm(int m) {
     }
 
     int n = m - 2;
-    vector<double> a(n-1);
+    vector<double> a(n);
     vector<double> b(n);
-    vector<double> c(n-1);
+    vector<double> c(n);
     vector<double> g(n);
-    for (int i = 0; i < n-1; i++){
+    for (int i = 0; i < n; i++){
       a[i] = -1; c[i] = -1; b[i] = 2;
       g[i] = 100*h*h*exp(-10*x[i + 1]); //extra index on x since we're ignoring the first index for this algo
     }
-    b[n-1] = 2;
-    g[n-1] = 100*h*h*exp(-10*x[n]);
+
     vector<double> genSol = general(a,b,c,g);
 
     vector<double> genVectors[2];
@@ -35,7 +34,7 @@ vector<double> generalAlgorithm(int m) {
 
     string filename("general.txt");
     writeFile(filename, genVectors, 2);
-    
+
     return genSol;
 }
 
