@@ -5,7 +5,7 @@
 #include <vector>
 #include <string>
 
-#include "generalAlgo.cpp"
+#include "algorithms.cpp"
 #include "calError.hpp"
 using namespace std;
 
@@ -28,10 +28,11 @@ int main(int argc, char * argv[]) {
     }
 
     writeExact(m); // u
-    generalAlgorithm(m); // v
-    
-    vector<double> errors = logAbsError(m);
-    
+    generalAlgorithm(m); // v with general algo
+    specialAlgorithm(m); // v with special algo
+
+    //vector<double> errors = logAbsError(m);
+
 
     return 0;
 }
