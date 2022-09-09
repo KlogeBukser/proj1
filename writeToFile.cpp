@@ -1,6 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <cmath>
+using namespace std;
+
 
 double u(double y) {
     return 1 - (1 - exp(-10))*y - exp(-10*y);
@@ -48,5 +51,5 @@ void writeFile(string filename, vector<double> vectors[], int nVectors){
     }
         outFile << std::endl;
   }
-    outFile.close();
+  outFile.close();
 }
