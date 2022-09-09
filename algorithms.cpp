@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void generalAlgorithm(int m) {
+vector<double> generalAlgorithm(int m) {
     vector<double> x(m);
     x[0] = 0; x[m-1] = 1;
     double h = double(1)/(m-1);
@@ -33,8 +33,10 @@ void generalAlgorithm(int m) {
     genVectors[1] = genSol;
 
 
-    string filename("textfiles/general.txt");
+    string filename("general.txt");
     writeFile(filename, genVectors, 2);
+    
+    return genSol;
 }
 
 void specialAlgorithm(int m){
@@ -58,6 +60,6 @@ void specialAlgorithm(int m){
   genVectors[0] = x;
   genVectors[1] = genSol;
 
-  string filename("textfiles/special.txt");
+  string filename("special.txt");
   writeFile(filename, genVectors, 2);
 }
