@@ -1,6 +1,8 @@
 
 #include <vector>
 #include <cmath>
+#include <string>
+
 #include "triDiagonalSolver.cpp"
 #include "writeToFile.cpp"
 
@@ -32,7 +34,7 @@ vector<double> generalAlgorithm(int m) {
     genVectors[1] = genSol;
 
 
-    string filename("general.txt");
+    string filename("general" + to_string(m-1) + ".txt");
     writeFile(filename, genVectors, 2);
 
     return genSol;
@@ -59,7 +61,7 @@ void specialAlgorithm(int m){
   genVectors[0] = x;
   genVectors[1] = genSol;
 
-  string filename("special.txt");
+  string filename("special" + to_string(m-1) + ".txt");
   writeFile(filename, genVectors, 2);
 }
 
@@ -84,13 +86,13 @@ void writeCalError(vector<double> u, vector<double> v, int step, int is_abs) {
     if (is_abs) {
         for (int i=1;i<step-1;i++) { // starting from i=1 to avoid boundary points as error is 0 at those points.
             error[i] = log10(abs(u[i]-v[i]));
-            filename = "abs_error.txt";
+            filename = "abs_error" + to_string(step-1) + ".txt";
         }
     }
     else {
         for (int i=1;i<step-1;i++) { // starting from i=1 to avoid boundary points as error is 0 at those points.
             error[i] = log10(abs(u[i]-v[i])/u[i]);
-            filename = "rel_error.txt";
+            filename = "rel_error" + to_string(step-1) + ".txt";
         }
     }
     
