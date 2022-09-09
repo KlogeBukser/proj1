@@ -1,6 +1,8 @@
 import os
 from plot_from_file import read_and_plot
 
+#TODO: add plot for errors
+
 os.system("g++ -o main.out main.cpp -std=c++17")
 
 n = 100
