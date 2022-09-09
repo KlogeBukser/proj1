@@ -14,3 +14,5 @@ for n in (10,100,1000,10000):
  os.system("./main.out " + str(n + 1))
  read_and_plot(["exact.txt","general.txt"],"Solutions to Poisson's equation for n = " + str(n))
 """
+
+read_and_plot(["abs_error.txt","rel_error.txt"],"Logarithm of errors with n = " + str(n))
