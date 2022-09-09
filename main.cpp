@@ -6,7 +6,7 @@
 #include <string>
 
 #include "algorithms.cpp"
-#include "calError.hpp"
+#include "calError.cpp"
 using namespace std;
 
 //TODO: save u and v in main to pass int error calculations;
@@ -27,12 +27,13 @@ int main(int argc, char * argv[]) {
       cin >> m;
     }
 
-    writeExact(m); // u
-    generalAlgorithm(m); // v with general algo
+    vector<double> exa_sol = writeExact(m); // u
+    vector<double> gen_sol = generalAlgorithm(m); // v with general algo
     specialAlgorithm(m); // v with special algo
 
-    //vector<double> errors = logAbsError(m);
-
-
+    vector<double> errors = logAbsError(exa_sol, gen_sol,m);
+    writeFile("error.txt", &errors, 1);
+    
+    
     return 0;
 }
