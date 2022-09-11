@@ -4,13 +4,13 @@
 
 Simply runs "main.py" under terminal will execute all the code, default for different values of n up to 10e4, 10 times, the time taken for running each of the general or special solution should be printed, and no graphs or text files would be generated.
 
-## How to Reproduce Results for each question
+## How to Reproduce Results for Each Question
 Please undo the changes for each questions as the instructions shows only deviation from the default settings. 
 
 
 line 11:
 ```c++
-#deifne MAX_RUN 10 
+#define MAX_RUN 10 
 ```
 
 to
