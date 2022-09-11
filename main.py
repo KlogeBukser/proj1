@@ -14,5 +14,5 @@ for elem in values:
 # read_and_plot(["textfiles/exact" + str(elem) + ".txt" for elem in values],"exact solution")
 # read_and_plot(["textfiles/exact" + str(elem) + ".txt" for elem in values] + ["textfiles/general" + str(elem) + ".txt" for elem in values],"Solutions to Poissons Equation")
 
-read_and_plot(["textfiles/abs n = " + str(elem) + ".txt" for elem in values],"Absolute logarithm of errors")
-read_and_plot(["textfiles/rel n = " + str(elem) + ".txt" for elem in values],"Relative logarithm of errors")
+# read_and_plot(["textfiles/abs n = " + str(elem) + ".txt" for elem in values],"Absolute logarithm of errors")
+# read_and_plot(["textfiles/rel n = " + str(elem) + ".txt" for elem in values],"Relative logarithm of errors")
