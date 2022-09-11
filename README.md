@@ -40,7 +40,7 @@ Then run again "main.py", the correct text files and plots should be generated.
 read_and_plot(["textfiles/general" + str(elem) + ".txt" for elem in values, "textfiles/special" + str(elem) + ".txt" for elem in values"],"Solutions to Poissons Equation")
 ```
 
-#### In "algorithms.cpp", uncomment line 45 and 79:
+#### In "algorithms.cpp", uncomment line 47 and 81:
 
 ```c++
 writeFile(filename, genVectors, 2);
