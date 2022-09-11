@@ -52,6 +52,7 @@ int main(int argc, char * argv[]) {
     cout << "Average runtime for general algo: " << tot_gt/ MAX_RUN << endl;
     cout << "Average runtime for special algo: " << tot_st/ MAX_RUN << endl;
     
+    // writing is slow, commented out
 //    writeCalError(exa_sol, gen_sol,m, 1); // absolute error
 //    writeCalError(exa_sol, gen_sol,m, 0); // relative error
 
