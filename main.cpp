@@ -6,6 +6,7 @@
 #include <string>
 
 #include "algorithms.hpp"
+#include "writeToFile.hpp"
 using namespace std;
 
 #define MAX_RUN 1
