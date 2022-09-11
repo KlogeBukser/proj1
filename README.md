@@ -10,13 +10,13 @@ Please undo the changes for each questions as the instructions shows only deviat
 
 line 11:
 ```c++
-\#deifne MAX_RUN 10 
+#deifne MAX_RUN 10 
 ```
 
 to
 
 ```c++
-\#define MAX_RUN 1
+#define MAX_RUN 1
 ```
 
 ### Question 2
