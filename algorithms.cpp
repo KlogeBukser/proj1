@@ -8,7 +8,7 @@
 
 using namespace std;
 
-vector<double> generalAlgorithm(int m) {
+vector<double> generalAlgorithm(int m, double *time) {
     vector<double> x(m);
     x[0] = 0; x[m-1] = 1;
     double h = double(1)/(m-1);
@@ -29,8 +29,10 @@ vector<double> generalAlgorithm(int m) {
     clock_t t1 = clock();
     vector<double> genSol = general(a,b,c,g);
     clock_t t2 = clock();
-    double duration_seconds = ((double) (t2 - t1)) / CLOCKS_PER_SEC;
-    cout << "General algo: n = " << m - 1 << ", t = " << duration_seconds << endl;
+  
+    *time = ((double) (t2 - t1)) / CLOCKS_PER_SEC;
+   
+    cout << "General algo: n = " << m - 1 << ", t = " << *time << endl;
 
     vector<double> genVectors[2];
 
@@ -44,7 +46,7 @@ vector<double> generalAlgorithm(int m) {
     return genSol;
 }
 
-void specialAlgorithm(int m){
+void specialAlgorithm(int m, double *time){
   vector<double> x(m);
   x[0] = 0; x[m-1] = 1;
   double h = double(1)/(m-1);
@@ -62,8 +64,9 @@ void specialAlgorithm(int m){
   clock_t t3 = clock();
   vector<double> genSol = special(g);
   clock_t t4 = clock();
-  double duration_seconds = ((double) (t4 - t3)) / CLOCKS_PER_SEC;
-  cout << "Special algo: n = " << m - 1 << ", t = " << duration_seconds << endl;
+  *time = ((double) (t4 - t3)) / CLOCKS_PER_SEC;
+  
+  cout << "Special algo: n = " << m - 1 << ", t = " << *time << endl;
 
   vector<double> genVectors[2];
 

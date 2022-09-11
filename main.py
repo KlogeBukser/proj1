@@ -12,5 +12,5 @@ for elem in values:
 
 
 
-#read_and_plot(["abs n = " + str(elem) + ".txt" for elem in values],"Absolute logarithm of errors")
-#read_and_plot(["rel n = " + str(elem) + ".txt" for elem in values],"Relative logarithm of errors")
+read_and_plot(["textfiles/abs n = " + str(elem) + ".txt" for elem in values],"Absolute logarithm of errors")
+read_and_plot(["textfiles/rel n = " + str(elem) + ".txt" for elem in values],"Relative logarithm of errors")

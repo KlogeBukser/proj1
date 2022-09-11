@@ -14,6 +14,6 @@ def read_and_plot(filenames,title):
     for i in range(n):
         x = x_vals[i]
         y = y_vals[i]
-        plt.plot(x,y, label = filenames[i][:-4])
+        plt.plot(x,y, label = filenames[i][10:-4])
     plt.legend()
     plt.show()
