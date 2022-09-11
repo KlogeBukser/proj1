@@ -2,9 +2,11 @@
 #include <vector>
 #include <cmath>
 #include <string>
+#include <iostream>
 
-#include "triDiagonalSolver.cpp"
-#include "writeToFile.cpp"
+#include "triDiagonalSolver.hpp"
+#include "writeToFile.hpp"
+#include "algorithms.hpp"
 
 using namespace std;
 

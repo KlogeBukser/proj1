@@ -5,7 +5,7 @@
 #include <vector>
 #include <string>
 
-#include "algorithms.cpp"
+#include "algorithms.hpp"
 using namespace std;
 
 #define MAX_RUN 1

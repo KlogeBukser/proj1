@@ -1,7 +1,7 @@
 import os
 from plot_from_file import read_and_plot
 
-os.system("g++ -o main.out main.cpp -std=c++17")
+os.system("g++ -o main.out main.cpp algorithms.cpp triDiagonalSolver.cpp writeToFile.cpp -std=c++17")
 
 k = 5
 

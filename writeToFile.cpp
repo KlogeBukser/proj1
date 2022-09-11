@@ -2,7 +2,9 @@
 #include <fstream>
 #include <vector>
 #include <cmath>
+#include "writeToFile.hpp"
 using namespace std;
+
 
 
 double u(double y) {
