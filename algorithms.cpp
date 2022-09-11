@@ -86,7 +86,7 @@ void writeCalError(vector<double> u, vector<double> v, int step, int is_abs) {
     /* calculates the absolute or relative error */
 
     vector<double> error(step-2);
-
+    double max_error = -999;
 
     vector<double> x(step-2);
     double h = double(1)/(step-1);
@@ -101,19 +101,26 @@ void writeCalError(vector<double> u, vector<double> v, int step, int is_abs) {
         for (int i=1;i<step-2;i++) { // starting from i=1 to avoid boundary points as error is 0 at those points.
             error[i] = log10(abs(u[i]-v[i]));
             filename = "textfiles/abs n = " + to_string(step-1) + ".txt";
+            if (error[i] > max_error) {
+                max_error = error[i];
+            }
         }
     }
     else {
         for (int i=1;i<step-2;i++) { // starting from i=1 to avoid boundary points as error is 0 at those points.
             error[i] = log10(abs(u[i]-v[i])/u[i]);
+            if (error[i] > max_error) {
+                max_error = error[i];
+            }
             filename = "textfiles/rel n = " + to_string(step-1) + ".txt";
         }
     }
-
+    
     vector<double> error_vectors[2];
 
     error_vectors[0] = x;
     error_vectors[1] = error;
 
-    writeFile(filename, error_vectors, 2);
+//    writeFile(filename, error_vectors, 2);
+    cout << max_error << endl;
 }
