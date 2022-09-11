@@ -8,7 +8,7 @@
 #include "algorithms.cpp"
 using namespace std;
 
-#define MAX_RUN 10
+#define MAX_RUN 100
 
 //TODO: save u and v in main to pass int error calculations;
 
@@ -31,13 +31,19 @@ int main(int argc, char * argv[]) {
     double gen_time = 0.0, spe_time = 0.0, tot_gt=0.0, tot_st=0.0;
     
     
-    vector<double> exa_sol = writeExact(m); // u
+//    vector<double> exa_sol = writeExact(m); // u
     vector<double> gen_sol; //= generalAlgorithm(m, &gen_time); // v with general algo
 //    specialAlgorithm(m,&spe_time); // v with special algo
     
     
     for (int i=0;i<MAX_RUN; i++) {
+        
+//        clock_t t1 = clock();
         gen_sol = generalAlgorithm(m, &gen_time);
+//        clock_t t2 = clock();
+//        double duration_seconds = ((double) (t2 - t1)) / CLOCKS_PER_SEC;
+//        cout << "main time: " << duration_seconds << endl;
+        
         specialAlgorithm(m,&spe_time);
         tot_gt+=gen_time;
         tot_st+=spe_time;
@@ -46,8 +52,8 @@ int main(int argc, char * argv[]) {
     cout << "Average runtime for general algo: " << tot_gt/ MAX_RUN << endl;
     cout << "Average runtime for special algo: " << tot_st/ MAX_RUN << endl;
     
-    writeCalError(exa_sol, gen_sol,m, 1); // absolute error
-    writeCalError(exa_sol, gen_sol,m, 0); // relative error
+//    writeCalError(exa_sol, gen_sol,m, 1); // absolute error
+//    writeCalError(exa_sol, gen_sol,m, 0); // relative error
 
     return 0;
 }

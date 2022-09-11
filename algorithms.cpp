@@ -41,7 +41,8 @@ vector<double> generalAlgorithm(int m, double *time) {
 
 
     string filename("textfiles/general" + to_string(m-1) + ".txt");
-    writeFile(filename, genVectors, 2);
+  // writing is slow, commented out
+//    writeFile(filename, genVectors, 2);
 
     return genSol;
 }
@@ -74,7 +75,8 @@ void specialAlgorithm(int m, double *time){
   genVectors[1] = genSol;
 
   string filename("textfiles/special" + to_string(m-1) + ".txt");
-  writeFile(filename, genVectors, 2);
+  // writing is slow, commented out
+//  writeFile(filename, genVectors, 2);
 }
 
 void writeCalError(vector<double> u, vector<double> v, int step, int is_abs) {
