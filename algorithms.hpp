@@ -1,10 +1,3 @@
-//
-//  algorithms.h
-//  Comp proj1
-//
-//  Created by Bukser Kloge on 11/9/22.
-//
-
 #ifndef algorithms_h
 #define algorithms_h
 

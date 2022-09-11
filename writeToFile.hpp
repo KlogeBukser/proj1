@@ -1,10 +1,3 @@
-//
-//  writeToFile.h
-//  Comp proj1
-//
-//  Created by Bukser Kloge on 11/9/22.
-//
-
 #ifndef writeToFile_h
 #define writeToFile_h
 
