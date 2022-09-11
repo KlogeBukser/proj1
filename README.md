@@ -21,9 +21,9 @@ to
 
 ### Question 2
 #### In "main.cpp", uncomment line 34:
-{% codeblock %}
+```c++
 vector<double> exa_sol = writeExact(m);
-{% endcodeblock %}
+```
 #### In "main.py", uncomment line 14:
 
 ```python
