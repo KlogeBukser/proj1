@@ -8,7 +8,7 @@ Simply run "main.py" under terminal will execute all the code, default for diffe
 Please undo the changes for each questions as the instructions shows only deviation from the default settings. 
 
 ### General Parameters
-line 11 in "main.cpp":
+To reproduce the results first change line 11 in "main.cpp":
 ```c++
 #define MAX_RUN 10 
 ```
@@ -18,7 +18,7 @@ to
 ```c++
 #define MAX_RUN 1
 ```
-changes the numbers of times that the general and special algorithms would be run.
+This changes the numbers of times that the general and special algorithms would be run.
 
 Changing the k value in line 6 in "main.py":
 
