@@ -7,8 +7,8 @@ Simply runs "main.py" under terminal will execute all the code, default for diff
 ## How to Reproduce Results for Each Question
 Please undo the changes for each questions as the instructions shows only deviation from the default settings. 
 
-
-line 11:
+### General Parameters
+line 11 in "main.cpp":
 ```c++
 #define MAX_RUN 10 
 ```
@@ -18,6 +18,14 @@ to
 ```c++
 #define MAX_RUN 1
 ```
+changes the numbers of times that the general and special algorithms would be run.
+
+Changing the k value in line 6 in "main.py":
+
+```python
+k=5
+```
+changes the maximum steps for which code will run in multiples of 10.
 
 ### Question 2
 #### In "main.cpp", uncomment line 34:
