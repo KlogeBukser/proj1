@@ -28,7 +28,7 @@ k=5
 changes the maximum steps for which code will run in multiples of 10.
 
 ### Question 2
-#### In "main.cpp", uncomment line 34:
+#### In "main.cpp", uncomment line 35:
 ```c++
 vector<double> exa_sol = writeExact(m);
 ```
