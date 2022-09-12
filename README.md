@@ -45,7 +45,7 @@ Then run again "main.py", the correct text files and plots should be generated.
 #### In "main.py", uncomment line 15:
 
 ```python
-read_and_plot(["textfiles/general" + str(elem) + ".txt" for elem in values, "textfiles/special" + str(elem) + ".txt" for elem in values"],"Solutions to Poissons Equation")
+read_and_plot(["textfiles/exact" + str(elem) + ".txt" for elem in values] + ["textfiles/general" + str(elem) + ".txt" for elem in values],"Solutions to Poissons Equation")
 ```
 
 #### In "algorithms.cpp", uncomment line 47 and 81:
