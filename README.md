@@ -57,7 +57,7 @@ writeFile(filename, genVectors, 2);
 Then run again "main.py", the correct text files and plots should be generated.
 ### Question 8
 
-#### In "main.cpp", uncomment line 34,51 and 52:
+#### In "main.cpp", uncomment line 35, 51 and 52:
 
 ```c++
 writeCalError(exa_sol, gen_sol,m, 1); // absolute error
