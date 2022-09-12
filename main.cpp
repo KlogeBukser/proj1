@@ -9,7 +9,7 @@
 #include "writeToFile.hpp"
 using namespace std;
 
-#define MAX_RUN 1
+#define MAX_RUN 10
 
 //TODO: save u and v in main to pass int error calculations;
 
