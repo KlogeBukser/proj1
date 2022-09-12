@@ -31,10 +31,8 @@ vector<double> generalAlgorithm(int m, double *time) {
     clock_t t1 = clock();
     vector<double> genSol = general(a,b,c,g);
     clock_t t2 = clock();
-  
+
     *time = ((double) (t2 - t1)) / CLOCKS_PER_SEC;
-   
-    cout << "General algo: n = " << m - 1 << ", t = " << *time << endl;
 
     vector<double> genVectors[2];
 
@@ -69,8 +67,6 @@ void specialAlgorithm(int m, double *time){
   clock_t t4 = clock();
   *time = ((double) (t4 - t3)) / CLOCKS_PER_SEC;
   
-  cout << "Special algo: n = " << m - 1 << ", t = " << *time << endl;
-
   vector<double> genVectors[2];
 
   genVectors[0] = x;
@@ -115,7 +111,7 @@ void writeCalError(vector<double> u, vector<double> v, int step, int is_abs) {
             filename = "textfiles/rel n = " + to_string(step-1) + ".txt";
         }
     }
-    
+
     vector<double> error_vectors[2];
 
     error_vectors[0] = x;
